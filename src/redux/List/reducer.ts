@@ -10,7 +10,7 @@ const initialState: I_ListReducer = {
 const listReducer = (state = initialState, action: any) => {
     switch (action.type) {
         case actionTypes.SET_LIST:
-            return { ...state, isLoading: true };
+            return { ...state, isLoading: true, errMsg: "" };
         case actionTypes.SET_LIST_SUCCESS:
             return { ...state, list: action.payload, isLoading: false };
         case actionTypes.SET_LIST_FAIL:
