@@ -18,6 +18,18 @@ function* rootSaga() {
 }
 sagaMiddleware.run(rootSaga);
 
+const saveState = (state: RootState) => {
+    console.log("statess", state);
+    localStorage.setItem("ddd", "GGG");
+};
+
+// https://egghead.io/lessons/javascript-redux-persisting-the-state-to-the-local-storage
+// https://stackoverflow.com/questions/69333353/run-a-side-effect-after-slice-redux-state-update-completed
+
+store.subscribe(() => {
+    saveState(store.getState());
+});
+
 // export const store = configureStore({
 //     reducer: {
 //         listReducer,

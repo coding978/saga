@@ -14,6 +14,11 @@ function* setListAsync(action: I_SetList): Generator<StrictEffect, any, any> {
         // 可控制延遲
         // yield delay(3000);
 
+        // side effect should not in reducer
+        // https://stackoverflow.com/questions/32982237/where-should-i-put-synchronous-side-effects-linked-to-actions-in-redux
+        // 'https://stackoverflow.com/questions/36016336/why-does-a-redux-reducer-have-to-be-side-effect-free'
+        // 'https://redux.js.org/understanding/history-and-design/prior-art'
+        localStorage.setItem("name", "ss");
         // put 來產生 dispatch 這個effect 更新store的資料
         yield put(actions.setListSuccess(listRes.data.list));
     } catch (err: any) {
