@@ -57,3 +57,19 @@ https: const listReducer = (state = initialState, action: any) => {
 export default listReducer;
 
 // https://stackoverflow.com/questions/32135779/updating-nested-data-in-redux-store
+
+// state of shape
+// https://redux.js.org/usage/structuring-reducers/normalizing-state-shape
+
+// {
+//     simpleDomainData1: {....},
+//     simpleDomainData2: {....},
+//     entities : {
+//         entityType1 : {....},
+//         entityType2 : {....}
+//     },
+//     ui : {
+//         uiSection1 : {....},
+//         uiSection2 : {....}
+//     }
+// }
