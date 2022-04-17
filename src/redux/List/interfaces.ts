@@ -9,6 +9,7 @@ export interface I_ListReducer {
     list: I_list[];
     errMsg: string;
     isLoading: boolean;
+    entu: {};
 }
 
 export interface I_Req {

@@ -9,7 +9,7 @@ const ListItems = () => {
     // console.log("render", list);
 
     if (isLoading) return <div style={{ textAlign: "center" }}>loading...</div>;
-    if (errMsg) return <div>{errMsg}</div>;
+    if (errMsg) return <div style={{ textAlign: "center" }}>{errMsg}</div>;
 
     return (
         <div style={{ display: "flex", justifyContent: "center" }}>

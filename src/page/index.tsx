@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ListItems from "../components/ListItems";
-import { setList } from "../redux/List/actions";
+import { setCancel, setList } from "../redux/List/actions";
 import { I_list } from "../redux/List/interfaces";
 import { setListReq } from "../redux/List/thunk";
 import { RootState } from "../redux/store";
@@ -10,7 +10,7 @@ const ListPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setList({ page: 1 }));
+        // dispatch(setList({ page: 1 }));
         // dispatch(setList({ page: 1 }));
     }, []);
 
@@ -32,6 +32,13 @@ const ListPage = () => {
                     }}
                 >
                     data2
+                </button>
+                <button
+                    onClick={() => {
+                        dispatch(setCancel());
+                    }}
+                >
+                    cancel
                 </button>
             </div>
             <ListItems />

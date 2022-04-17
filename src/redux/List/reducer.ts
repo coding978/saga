@@ -5,6 +5,9 @@ const initialState: I_ListReducer = {
     list: [],
     errMsg: "",
     isLoading: false,
+    entu: {
+        idaLoading: false,
+    },
 };
 // https://chentsulin.github.io/redux/docs/basics/Reducers.html#designing-the-state-shape
 // reducer  should be pure function
@@ -28,10 +31,20 @@ const initialState: I_ListReducer = {
 // app state
 // ui state
 
-const listReducer = (state = initialState, action: any) => {
+//stackoverflow.com/questions/33940015/how-to-choose-the-redux-state-shape-for-an-app-with-list-detail-views-and-pagina
+
+https: const listReducer = (state = initialState, action: any) => {
     switch (action.type) {
         case actionTypes.SET_LIST:
-            return { ...state, isLoading: true, errMsg: "" };
+            return {
+                ...state,
+                isLoading: true,
+                errMsg: "",
+                entu: {
+                    ...state.entu,
+                    idaLoading: true,
+                },
+            };
         case actionTypes.SET_LIST_SUCCESS:
             return { ...state, list: action.payload, isLoading: false };
         case actionTypes.SET_LIST_FAIL:

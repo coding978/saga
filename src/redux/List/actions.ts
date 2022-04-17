@@ -15,3 +15,7 @@ export const setListFail = (payload: any) => ({
     type: actionTypes.SET_LIST_FAIL,
     payload,
 });
+
+export const setCancel = () => ({
+    type: actionTypes.SET_CANCEL,
+});
